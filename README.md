@@ -26,4 +26,4 @@ you can get a train.json file in dictionary dataset/train/  for mmdetection
 Training
 -------------
 
-if you want to demo here, you can go to here:
+if you want to demo, you can go to here:
