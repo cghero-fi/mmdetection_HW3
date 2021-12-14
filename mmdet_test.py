@@ -8,7 +8,13 @@ import pylab
 import pycocotools._mask as _mask
 import json
 
-def result2dict(img_id, bbox_conf, mask):
+config_file = '/content/mmdetection/work_dirs/nuclei/nuclei.py'
+checkpoint_file = '/content/mmdetection/work_dirs/nuclei/latest.pth'
+model = init_detector(config_file, checkpoint_file, device='cuda:0')
+
+coco = COCO('/content/dataset/test/test.json')
+
+def detect(img_id, bbox_conf, mask):
     out = {}
     out['image_id'] = int(img_id)
 
@@ -30,11 +36,7 @@ def result2dict(img_id, bbox_conf, mask):
     
     return out
 
-config_file = '/content/mmdetection/work_dirs/nuclei/nuclei.py'
-checkpoint_file = '/content/mmdetection/work_dirs/nuclei/latest.pth'
-model = init_detector(config_file, checkpoint_file, device='cuda:0')
 
-coco = COCO('/content/dataset/test/test.json')
 imgIds = coco.getImgIds()
 img = coco.loadImgs(imgIds[0])
 
@@ -49,7 +51,7 @@ for imgId in imgIds:
     
     pred_num = len(result[0][0])
     for i in range(pred_num):
-        output.append(result2dict(id, result[0][0][i], result[1][0][i]))
+        output.append(detect(id, result[0][0][i], result[1][0][i]))
 
 with open('answer.json', 'w') as f:
     f.write(json.dumps(output))
