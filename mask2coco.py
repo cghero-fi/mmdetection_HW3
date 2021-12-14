@@ -8,7 +8,7 @@ import numpy as np
 from pycococreatortools import pycococreatortools
 import matplotlib.pyplot as plt
 
-dataset_train_path = '/content/drive/MyDrive/LYY_HW3/dataset/train/'
+dataset_train_path = '/content/dataset/train/'
 
 CATEGORIES = [
     {
@@ -86,5 +86,5 @@ def convert_to_coco(ROOT_DIR=dataset_train_path, json_name='train.json'):
     with open('{}/'.format(ROOT_DIR) + json_name, 'w') as output_json_file:
         json.dump(coco_output, output_json_file)
 
-convert_to_coco(ROOT_DIR='/content/drive/MyDrive/LYY_HW3/dataset/train/', json_name='train.json')
-convert_to_coco(ROOT_DIR='/content/drive/MyDrive/LYY_HW3/dataset/val/', json_name='val.json')
+convert_to_coco(ROOT_DIR='/content/dataset/train/', json_name='train.json')
+#convert_to_coco(ROOT_DIR='/content/drive/MyDrive/LYY_HW3/dataset/val/', json_name='val.json')
