@@ -25,8 +25,14 @@ you can get a train.json file in dictionary dataset/train/  for mmdetection
 Training
 -------------
 
-if you want to demo, you can go to here:
+if you want to demo, you can go to here (all the weights and models will be downloaded):
 https://colab.research.google.com/drive/1ICZY_b4JVE-23nTd2Sw7HE_2jEpShFuC?usp=sharing
+
+or you can download here:
+
+https://drive.google.com/file/d/1TdpR1AqwONL1wgDuSq6wyY3yjAjxhWLw/view?usp=sharing
+
+https://drive.google.com/file/d/1rbNGni-eAkAMD1Jufqm4F3X6QHgH_bvE/view?usp=sharing
 
 installation and download the 
 ```bash
